@@ -1,0 +1,16 @@
+{{#if fps}}
+  <div id="fps">{{fps}} FPS</div>
+{{/if}}
+
+
+{{#if isPlaying}}
+  {{!-- FIXME: we need the `action` helper working --}}
+  <button onclick={{pause}}>Pause</button>
+{{else}}
+  {{!-- FIXME: we need the `action` helper working --}}
+  <button onclick={{play}}>Play</button>
+{{/if}}
+
+{{#each servers key="name" as |server|}}
+  {{server-uptime name=server.name days=server.days}}
+{{/each}}
